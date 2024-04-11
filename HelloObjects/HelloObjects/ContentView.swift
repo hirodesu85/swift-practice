@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isOn = true
+    
     var body: some View {
         VStack {
-            Text("Hello, world!")
-            Button("ボタン") {
-                
-            }
+            Toggle("スイッチ", isOn: $isOn)
+            Text("Hello World")
+                .padding()
+                .background(Color.green)
+                .clipShape(RoundedRectangle(cornerRadius: 40))
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
         }
         .padding()
     }
